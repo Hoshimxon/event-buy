@@ -3,13 +3,10 @@
 namespace App\Console\Commands;
 
 use App\Jobs\EmailNotification;
-use App\Jobs\PhoneNotification;
 use App\Models\Product;
 use App\Models\User;
-use App\Notifications\ProductBoughtMailNotification;
 use App\Sms;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Mail;
 
 class SendNotification extends Command
 {
