@@ -15,7 +15,7 @@ class SendNotification extends Command
      *
      * @var string
      */
-    protected $signature = 'send:notification {type} {client} {product}';
+    protected $signature = 'send:notification {channel_type} {client} {product}';
 
     /**
      * The console command description.
@@ -52,7 +52,7 @@ class SendNotification extends Command
             return 0;
         }
 
-        switch ($this->argument('type')) {
+        switch ($this->argument('channel_type')) {
             case 'mail':
                 EmailNotification::dispatch($client, $product);
                 $this->info('Successfully sent!');
@@ -62,7 +62,7 @@ class SendNotification extends Command
                 $this->info($message);
                 break;
             default:
-                $this->info('Type is incorrect!');
+                $this->info('Channel type is incorrect!');
         }
     }
 }
