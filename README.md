@@ -60,3 +60,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## How to use
+
+1. clone this repository;
+2. run `cp .env .env.example` and put value those variable MAIL_USERNAME, MAIL_PASSWORD, VONAGE_API_KEY, VONAGE_API_SECRET;
+3. create db in pgsql after named buy_event;
+4. run `composer install`;
+5. run `php artisan key:generate`;
+6. run `php artisan migrate`;
+7. run `php artisan db:seed`;
+8. create account in https://mailtrap.io/ and need to adjust;
+9. create account https://www.vonage.com/ and need to adjust;
+10 php artisan send:notification channel_type (mail or sms) client id (1, 10) product id (1, 100), for example `php artisan send:notification mail 5 50`.
